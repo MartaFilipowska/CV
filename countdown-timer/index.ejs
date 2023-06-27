@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SimpleFX | Online CFDs Trading, Forex, Bitcoins, Indices and Commodities</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<%- include ../../common/template-partials/meta-tags/csp.simplefx.ejs -%>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@400,700&display=swap">
+	<link rel="canonical" href="https://simplefx.com/lp/promo/">
+
+	<%- include ../../common/template-partials/head-common.ejs -%>
+
+	<!-- Adskeeper Sensor -->
+	<script type="text/javascript">(function() {
+		var d = document, w = window;
+		w.MgSensorData = w.MgSensorData || [];
+		w.MgSensorData.push({
+		cid:740061,
+		lng:"us",
+		project: "a.adskeeper.co.uk"
+		});
+		var l = "a.adskeeper.co.uk";
+		var n = d.getElementsByTagName("script")[0];
+		var s = d.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var dt = !Date.now?new Date().valueOf():Date.now();
+		s.src = "https://" + l + "/mgsensor.js?d=" + dt;
+		n.parentNode.insertBefore(s, n);
+		})();
+		</script>
+	<!-- /Adskeeper Sensor -->
+</head>
+<body>
+
+<div class="page-bg"></div>
+
+<div class="wrapper">
+	<div class="left-column">
+
+		<div class="logo">
+			<a href="https://simplefx.com/" target="blank">
+				<picture>
+					<source srcset="assets/sfx_logo.webp" type="image/webp" alt="SimpleFX">
+					<source srcset="assets/sfx_logo.png" type="image/png" alt="SimpleFX">
+					<img src="assets/sfx_logo.png" alt="SimpleFX">
+				</picture>
+			</a>
+		</div>
+
+		<h1>{{LP.PROMO.TITLE}}</h1>
+
+		<div class="content">
+			<p>{{LP.PROMO.SUBTITLE}}</p>
+		</div>
+
+		<div class="countdown not-visible" id="countdown">
+			<div class="container-day">
+				<h3 class="day" id="day">&nbsp;</h3>
+				<p class="timer-content">Days</p>
+			</div>
+
+			<div class="container-hour">
+				<h3 class="hour" id="hour">&nbsp;</h3>
+				<p class="timer-content">Hours</p>
+			</div>
+
+			<div class="container-minute">
+				<h3 class="minute" id="minute">&nbsp;</h3>
+				<p class="timer-content">Minutes</p>
+			</div>
+
+			<div class="container-second">
+				<h3 class="second" id="second">&nbsp;</h3>
+				<p class="timer-content">Seconds</p>
+			</div>
+		</div>
+
+		<form class="form" id="form">
+
+			<div class="flex-row">
+				<input class="input input__email input-email"
+					   type="email"
+					   maxlength="47"
+					   data-input-email
+					   required
+					   placeholder="Please enter your e-mail">
+			</div>
+
+			<div class="agreement flex-row">
+				<div class="agreement__content agreement__content--general">
+					<input name="termsAndConditionsAccepted" value="true" type="checkbox" required
+						   class="input-agreement" id="termsAndConditionsAccepted">
+					<label for="termsAndConditionsAccepted" class="agreement__label terms-of-use" id="terms-of-use"
+						   data-agreement="TERMS_OF_USE"></label>
+
+					<a href="https://app.simplefx.com/assets/resources/SimpleFX_TermsOfUseAndCustomerAgreement.pdf"
+					   target="_blank" rel="noopener" class="show-hide-consent">Read more</a>
+
+					<span class="consent__field-required" hidden data-required-for="termsAndConditionsAccepted">This field is required</span>
+				</div>
+			</div>
+
+			<div class="agreement flex-column">
+				<div class="agreement__content agreement__content--personal-data">
+					<input name="gdprAccepted" value="true" type="checkbox" required class="input-agreement"
+						   id="gdprAccepted">
+					<label for="gdprAccepted">
+                        <span id="email-consent" class="agreement__label" data-show="0"
+							  data-agreement="PERSONAL_DATA"></span>
+					</label>
+				</div>
+				<div>
+					<span class="consent-toggle show-hide-consent"
+						  data-toggle="#email-consent">Read more</span>
+
+					<span class="consent__field-required" hidden data-required-for="gdprAccepted">This field is required</span>
+
+				</div>
+			</div>
+
+			<div class="g-recaptcha"
+				 data-sitekey="<%= htmlWebpackPlugin.options.env.recaptchaKey %>"
+				 data-size="invisible"
+				 data-callback="recaptchaCallback"></div>
+
+			<div class="form__btn-wrapper">
+				<button type="button"
+						class="btn join-now-btn"
+						data-button-send-email>
+					<span>register</span>
+					<%- include ../../common/template-partials/button-loader/button-loader-dots -%>
+				</button>
+			</div>
+		</form>
+
+		<div class="footer">
+
+			<%- include ./partials/footer-social.ejs -%>
+
+			<p class="footer__login">Already have an account? <a href="#" data-redirect-to-sfx>Log in</a></p>
+
+			<p>&copy; Copyright SimpleFX <span data-current-year>2021</span></p>
+
+		</div>
+	</div>
+
+	<div class="right-column"></div>
+</div>
+
+<%- include ../../common/template-partials/modal/modal-success.common.ejs -%>
+
+<%- include ../../common/template-partials/modal/modal-error.simplefx.ejs -%>
+
+
+<script src="//www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

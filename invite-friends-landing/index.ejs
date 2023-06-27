@@ -1,0 +1,313 @@
+<%
+const LANG = htmlWebpackPlugin.options.LANG;
+const LANGUAGES = htmlWebpackPlugin.options.LANGUAGES;
+%>
+
+<!DOCTYPE html>
+<html lang="<%= LANG %>">
+<head>
+	<meta charset="utf-8">
+	<title>SimpleFX | The Affiliate Program That Just Works.</title>
+	<base href="./">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<%- include ../../common/template-partials/meta-tags/csp.simplefx.ejs -%>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@400,700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+	<link rel="canonical" href="https://simplefx.com/lp/invite-friends/<%- LANG === 'en' ? '' : (LANG + '/') -%>">
+	<link rel="alternate" hreflang="x-default" href="https://simplefx.com/lp/invite-friends/">
+
+	<% LANGUAGES.forEach((languageCode) => { %>
+		<link rel="alternate"
+			  hreflang="<%- languageCode -%>"
+			  href="https://simplefx.com/lp/invite-friends/<%- languageCode === 'en' ? '' : (languageCode + '/') -%>"
+		>
+	<% }) %>
+
+	<%- include ../../common/template-partials/head-common.ejs -%>
+</head>
+<body>
+
+<div class="main">
+	<div class="header-text">
+		<h1>{{LP.FRIENDS.TITLE}}</h1>
+		<h2>{{LP.FRIENDS.SUBTITLE}}</h2>
+		<div class="header-buttons">
+			<div class="form__btn-wrapper">
+				<a href="#registration"><button type="button"
+						class="btn">
+					<span>{{LP.FRIENDS.BUTTON.ACCESS}}</span>
+				</button></a>
+			</div>
+			<div class="form__btn-wrapper">
+				<a href="#how-to-earn"><button type="button"
+						class="btn btn--header-white">
+					<span>{{LP.FRIENDS.BUTTON.EARN}}</span>
+				</button></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page__section--green-bg">
+	<div class="wrapper wrapper__main-content">
+		<div class="main-content">
+			<p class="text--font25">{{LP.FRIENDS.TEXT1}}</p>
+			<p>{{LP.FRIENDS.TEXT2}}</p>
+		</div>
+		<div style="width:100%">
+			<p class="text--font30 feature-boxes-title">{{LP.FRIENDS.TEXT3}}</p>
+		</div>
+		<div class="feature-boxes">
+			<div class="box">
+				<img class="icon" alt="simplefx-affiliate-program-feature1" src="assets/hand.png" />
+				<p class="text--bold box--title">{{LP.FRIENDS.BOX1.TITLE}}</p>
+				<p class="box--text">{{LP.FRIENDS.BOX1.TEXT}}</p>
+			</div>
+			<div class="box">
+				<img class="icon" alt="simplefx-affiliate-program-feature2" src="assets/phone.png" />
+				<p class="text--bold box--title">{{LP.FRIENDS.BOX2.TITLE}}</p>
+				<p class="box--text">{{LP.FRIENDS.BOX2.TEXT}}</p>
+			</div>
+			<div class="box">
+				<img class="icon" alt="simplefx-affiliate-program-feature3" src="assets/hacker.png" />
+				<p class="text--bold box--title">{{LP.FRIENDS.BOX3.TITLE}}</p>
+				<p class="box--text">{{LP.FRIENDS.BOX3.TEXT}}</p>
+			</div>
+			<div class="box">
+				<img class="icon" alt="simplefx-affiliate-program-feature4" src="assets/cookie.png" />
+				<p class="text--bold box--title">{{LP.FRIENDS.BOX4.TITLE}}</p>
+				<p class="box--text">{{LP.FRIENDS.BOX4.TEXT}}</p>
+			</div>
+		</div>
+		<div class="form__btn-wrapper">
+			<a href="#registration"><button type="button"
+					class="btn">
+				<span>{{LP.FRIENDS.LETS_DO_THIS}}</span>
+			</button></a>
+		</div>
+	</div>
+</div>
+
+<div class="photo"></div>
+
+<div class="page__section--green-bg page__section--green-bg__reverse" id="how-to-earn">
+	<p class="text--uppercase step--title">{{LP.FRIENDS.TEXT4}}</p>
+	<div class="step">
+		<img alt="simplefx-affiliate-program-first-deposit-bonus" class="step--icon" src="assets/step1.png" />
+		<div class="step--text">
+			<p class="text--bold">{{LP.FRIENDS.STEP1.TITLE}}</p>
+			<p>{{LP.FRIENDS.STEP1.TEXT}}</p>
+		</div>
+	</div>
+	<img alt="simplefx-affiliate-program-arrow" src="assets/step-arrow.png" />
+	<div class="step">
+		<img alt="simplefx-affiliate-program-reflink" class="step--icon" src="assets/step2.png" />
+		<div class="step--text">
+			<p class="text--bold">{{LP.FRIENDS.STEP2.TITLE}}</p>
+			<p>{{LP.FRIENDS.STEP2.TEXT}}</p>
+		</div>
+	</div>
+	<img alt="simplefx-affiliate-program-arrow" src="assets/step-arrow.png" />
+	<div class="step">
+		<img alt="simplefx-affiliate-program-invite" class="step--icon" src="assets/step3.png" />
+		<div class="step--text">
+			<p class="text--bold">{{LP.FRIENDS.STEP3.TITLE}}</p>
+			<p>{{LP.FRIENDS.STEP3.TEXT}}</p>
+		</div>
+	</div>
+	<img alt="simplefx-affiliate-program-arrow" src="assets/step-arrow.png" />
+	<div class="step step--final">
+		<img class="step--final__icon" alt="simplefx-affiliate-program-50-rev-share" src="assets/final-step.png" />
+		<div class="step--final__text">
+			<p class="step--final__title">{{LP.FRIENDS.STEP4.TITLE}}</p>
+			<p>{{LP.FRIENDS.STEP4.TEXT}}</p>
+		</div>
+	</div>
+	<div class="form__btn-wrapper">
+		<a href="#registration"><button type="button"
+				class="btn">
+			<span>{{LP.FRIENDS.LETS_DO_THIS}}</span>
+		</button></a>
+	</div>
+</div>
+
+<div class="photo photo--lady"></div>
+
+<div class="page__section--green-bg">
+	<div class="wrapper wrapper__main-content">
+		<div class="main-content">
+			<p class="text--font25 text--bold">{{LP.FRIENDS.TEXT5}}</p>
+			<p>{{LP.FRIENDS.TEXT6}}</p>
+		</div>
+		<div class="reviews">
+			<div class="step step--final step--review">
+				<img class="step--review__icon" alt="simplefx-affiliate-program-man" src="assets/review1.png" />
+				<div class="step--review__text">
+					<p>{{LP.FRIENDS.REVIEW1.TEXT}}</p>
+					<p class="text--bold text--right">{{LP.FRIENDS.REVIEW1.AUTHOR}}</p>
+				</div>
+			</div>
+			<div class="step step--final step--review step--review__to-right">
+				<div class="step--review__other-text">
+					<p>{{LP.FRIENDS.REVIEW2.TEXT}}</p>
+					<p class="text--bold text--right">{{LP.FRIENDS.REVIEW2.AUTHOR}}</p>
+				</div>
+				<img class="step--review__icon" alt="simplefx-affiliate-program-woman" src="assets/review2.png" />
+			</div>
+		</div>
+		<div class="form__btn-wrapper">
+			<a href="#registration"><button type="button"
+					class="btn">
+				<span>{{LP.FRIENDS.LETS_DO_THIS}}</span>
+			</button></a>
+		</div>
+		<div class="trade">
+			<p class="text--font30 text--bold text--center">{{LP.FRIENDS.TEXT7}}</p>
+			<div class="trade-pictures">
+				<img class="phone" alt="simplefx-affiliate-program-mobile-app-ios-android" src="assets/app-phone.png" />
+				<div class="symbols">
+					<div class="symbols--line">
+						<a href="#registration"><img class="symbol" alt="simplefx-affiliate-program-trade-btc" src="assets/btc.png" /></a>
+						<a href="#registration"><img class="symbol" alt="simplefx-affiliate-program-trade-dot" src="assets/dot.png" /></a>
+						<a href="#registration"><img class="symbol" alt="simplefx-affiliate-program-trade-bnb" src="assets/bnb.png" /></a>
+					</div>
+					<div class="symbols--line">
+						<a href="#registration"><img class="symbol" alt="simplefx-affiliate-program-trade-ada" src="assets/ada.png" /></a>
+						<a href="#registration"><img class="symbol" alt="simplefx-affiliate-program-trade-eth" src="assets/eth.png" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="many-more">
+			<p class="text--font30 text--bold text--center">{{LP.FRIENDS.TEXT8}}</p>
+			<div class="rewards">
+				<div class="reward--box">
+					<img src="assets/reward.png" alt="simplefx-affiliate-program-reward-best-mobile-app" class="reward--image" />
+					<p class="text--font25 text--bold text--center reward--title">{{LP.COMMON.REWARD3.TITLE}}</p>
+					<p class="text--font25 text--center reward--text">{{LP.COMMON.REWARD3.DESCRIPTION}}</p>
+				</div>
+				<div class="reward--box">
+					<img src="assets/reward.png" alt="simplefx-affiliate-program-reward-best-trading-platform" class="reward--image" />
+					<p class="text--font25 text--bold text--center reward--title">{{LP.COMMON.REWARD6.TITLE}}</p>
+					<p class="text--font25 text--center reward--text">{{LP.COMMON.REWARD4.TITLE}}</p>
+				</div>
+				<div class="reward--box">
+					<img src="assets/reward.png" alt="simplefx-affiliate-program-reward-best-support" class="reward--image" />
+					<p class="text--font25 text--bold text--center reward--title">{{LP.COMMON.REWARD7.TITLE}}</p>
+					<p class="text--font25 text--center reward--text">{{LP.COMMON.REWARD7.DESCRIPTION}}</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="form__btn-wrapper">
+			<a href="#registration"><button type="button"
+					class="btn">
+				<span>{{LP.FRIENDS.LETS_DO_THIS}}</span>
+			</button></a>
+		</div>
+	</div>
+</div>
+
+<div class="page__section--blue-bg" id="registration">
+	<div class="wrapper form__form-wrapper">
+		<div class="left-column">
+			<form class="form" id="form">
+				<div>
+					<p class="form__main-text--title">{{LP.COMMON.CREATE-AN-ACCOUNT}}</p>
+					<p class="form__main-text--subtitle">{{LP.COMMON.NO-MIN-DEPO-NO-FEES}}</p>
+				</div>
+
+				<p class="form__your-email-text">{{LP.COMMON.YOUR-EMAIL}}<span class="form__your-email-text--star">*</span></p>
+
+				<div class="flex-row">
+					<input class="input input__email input-email"
+							type="email"
+							maxlength="47"
+							data-input-email
+							required
+							placeholder="{{LP.FORM.ENTER_EMAIL}}">
+				</div>
+
+				<div class="agreement flex-row">
+					<div class="agreement__content agreement__content--general">
+						<input name="termsAndConditionsAccepted" value="true" type="checkbox" required
+								class="input-agreement" id="termsAndConditionsAccepted">
+						<label for="termsAndConditionsAccepted" class="agreement__label terms-of-use" id="terms-of-use"
+								data-agreement="TERMS_OF_USE"></label>
+
+						<a href="https://app.simplefx.com/assets/resources/SimpleFX_TermsOfUseAndCustomerAgreement.pdf"
+							target="_blank" rel="noopener" class="show-hide-consent">{{LP.COMMON.READ_MORE}}</a>
+
+						<span class="consent__field-required" hidden data-required-for="termsAndConditionsAccepted">{{LP.FORM.FIELD_REQUIRED}}</span>
+					</div>
+				</div>
+
+				<div class="agreement flex-row">
+					<div class="agreement__content agreement__content--personal-data">
+						<input name="gdprAccepted" value="true" type="checkbox" required class="input-agreement"
+								id="gdprAccepted">
+						<label for="gdprAccepted">
+							<span id="email-consent" class="agreement__label" data-show="0"
+									data-agreement="PERSONAL_DATA"></span>
+						</label>
+
+						<span class="consent-toggle show-hide-consent"
+								data-toggle="#email-consent">{{LP.COMMON.READ_MORE}}</span>
+
+						<span class="consent__field-required" hidden data-required-for="gdprAccepted">{{LP.FORM.FIELD_REQUIRED}}</span>
+					</div>
+				</div>
+
+				<div class="g-recaptcha"
+						data-sitekey="<%= htmlWebpackPlugin.options.env.recaptchaKey %>"
+						data-size="invisible"
+						data-callback="recaptchaCallback"></div>
+
+				<div class="form__btn-wrapper">
+					<button type="button"
+							class="btn btn--in-form"
+							data-button-send-email>
+						<span>{{LP.FRIENDS.TRY_STH_NEW}}</span>
+						<%- include ../../common/template-partials/button-loader/button-loader-dots -%>
+					</button>
+				</div>
+				<div class="already-have">
+					<a href="#" data-redirect-to-sfx><p class="already-have__login">{{LP.ALREADY_HAVE_AN_ACCOUNT}} {{LP.COMMON.LOG_IN}}</a>
+					</p>
+				</div>
+			</form>
+		</div>
+		<div class="right-column">
+			<p>{{LP.METALS.FORM.TEXT1}}</p>
+			<p>{{LP.METALS.FORM.TEXT2}}</p>
+			<p class="text--bold">{{LP.METALS.FORM.TEXT3}}</p>
+		</div>
+	</div>
+</div>
+
+<div class="page__section--dark-blue-bg footer-section">
+	<div class="wrapper">
+		<p>
+			{{LP.FOOTER.RIGHTS_RESERVED}}
+		</p>
+		<p class="text--center">&copy; Copyright SimpleFX <span
+					data-current-year><%- new Date().getFullYear() -%></span></p>
+	</div>
+</div>
+
+<%- include ../../common/template-partials/modal/modal-success.with-translations-keys.common.ejs -%>
+<%- include ../../common/template-partials/modal/modal-error.with-translations-keys.simplefx.ejs -%>
+
+<%- include ../../common/template-partials/hidden-translations/hidden-translations.simplefx.ejs -%>
+<%- include ../../common/template-partials/hidden-translations/hidden-translations.common.ejs -%>
+
+<script src="//www.google.com/recaptcha/api.js" async defer></script>
+
+</body>
+</html>
